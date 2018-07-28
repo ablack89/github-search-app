@@ -1,3 +1,14 @@
-FROM alpine
+FROM node:8
 
-CMD echo "Hello world!"
+WORKDIR /usr/src/github-search-app
+
+COPY package.json ./
+COPY package-lock.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 8080
+
+CMD [ "npm", "start" ]

@@ -1,0 +1,25 @@
+{
+  "name": "github-search-app",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "Alistair Black",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ablack89/github-search-app.git"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test:unit": "mocha unitTests/",
+    "test:integration": "mocha integrationTests/"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "jest": "^23.4.2"
+  }
+}
