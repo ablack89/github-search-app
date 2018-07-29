@@ -1,20 +1,9 @@
-var chai = require('chai');
-var chaiHttp = require('chai-http');
-var server = require('../server');
-var should = chai.should();
+var assert = require('assert');
 
-chai.use(chaiHttp);
-
-describe('Hello world', function() {
-  it('should return hello world on / GET');
-});
-
-it('should return hello world on / GET', function(done) {
-  chai.request(server)
-    .get('/')
-    .end(function(err, res){
-      res.should.have.status(200);
-      res.text.should.be.eql("Hello world\n")
-      done();
+describe('1', function() {
+  describe('#equals()', function() {
+    it('should return true when given value 1', function() {
+      assert.equal(1, 1);
     });
+  });
 });

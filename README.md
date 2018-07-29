@@ -6,6 +6,12 @@ The app has been built with the following versions:
 
 A Docker container with app installed and running can be built and run with:
 
-`docker build -t github-search-app . & docker run github-search-app -p 8080:8080`
+`docker build -t github-search-app .` and ` & docker run -p 8080:8080 github-search-app`
+
+Alternatively, the app can be tested and run as follows:
+ - `npm install`
+ - `npm run test:unit`
+ - `npm run test:integration`
+ - `npm start`
 
 The app will then be accessible at [http://localhost:8080/]

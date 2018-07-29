@@ -1,7 +1,7 @@
 {
   "name": "github-search-app",
   "version": "1.0.0",
-  "description": "Node.js on Docker",
+  "description": "GitHub Search App",
   "author": "Alistair Black",
   "repository": {
     "type": "git",
