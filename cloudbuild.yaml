@@ -1,0 +1,12 @@
+steps:
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['run', 'test:unit']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/github-search-app/github-search-app', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['run', '-d', 'gcr.io/github-search-app/github-search-app']
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['run', 'test:integration']
+images: ['gcr.io/github-search-app/github-search-app']
