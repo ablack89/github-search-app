@@ -6,17 +6,17 @@ var should = chai.should();
 chai.use(chaiHttp);
 
 
-describe('Hello world', function() {
-  it('should return hello world on / GET');
+describe('Not found', function() {
+  it('should return not found error on /foo GET');
 });
 
 
-it('should return hello world on / GET', function(done) {
+it('should return not found error on /foo GET', function(done) {
   chai.request(server)
-    .get('/')
+    .get('/foo')
     .end(function(err, res){
-      res.should.have.status(200);
-      res.text.should.be.eql("Hello world\n")
+      res.should.have.status(404);
+      res.text.should.be.eql("Not found")
       done();
     });
 });
