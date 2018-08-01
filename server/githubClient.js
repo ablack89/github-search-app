@@ -5,8 +5,8 @@ var githubUrlBuilder = require('./githubUrlBuilder.js');
 
 const headers = {
   'Accept': 'application/vnd.github.v3+json',
-  'User-Agent': 'GitHub Search App',
-  'Authorization': 'token 0bd291692636a1dac9e8413003f1a9ba4547739a'
+  'User-Agent': 'GitHub Search App'//,
+  // 'Authorization': 'token 0bd291692636a1dac9e8413003f1a9ba4547739a'
 };
 
 const search = function search(query, clientResponse) {
