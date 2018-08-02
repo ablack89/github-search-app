@@ -41,15 +41,15 @@ describe('githubClient', function() {
     });
     it('should return single repository details to client when single repository returned from GitHub search', function() {
       githubClient.search('query', clientResponseMock);
-      requestCallback(false, {statusCode:200}, "{\"items\":[{\"name\": \"foo\",\"stargazers_count\": 123,\"forks_count\":456}]}")
+      requestCallback(false, {statusCode:200}, "{\"items\":[{\"name\": \"foo\",\"stargazers_count\": 123,\"forks_count\":456,\"html_url\":\"http://foo.com\"}]}")
 
-      assert.deepEqual({repositories:[{"name": "foo", "stars": 123, "forks": 456}]}, response);
+      assert.deepEqual({repositories:[{"name": "foo", "stars": 123, "forks": 456, "url": "http://foo.com"}]}, response);
     });
     it('should return two repositories details to client when two repositories returned from GitHub search', function() {
       githubClient.search('query', clientResponseMock);
-      requestCallback(false, {statusCode:200}, "{\"items\":[{\"name\": \"foo\",\"stargazers_count\": 123,\"forks_count\":456},{\"name\": \"bar\",\"stargazers_count\": 321,\"forks_count\":654}]}")
+      requestCallback(false, {statusCode:200}, "{\"items\":[{\"name\": \"foo\",\"stargazers_count\": 123,\"forks_count\":456,\"html_url\":\"http://foo.com\"},{\"name\": \"bar\",\"stargazers_count\": 321,\"forks_count\":654,\"html_url\":\"http://bar.com\"}]}")
 
-      assert.deepEqual({repositories:[{"name": "foo", "stars": 123, "forks": 456},{"name": "bar", "stars": 321, "forks": 654}]}, response);
+      assert.deepEqual({repositories:[{"name": "foo", "stars": 123, "forks": 456, "url": "http://foo.com"},{"name": "bar", "stars": 321, "forks": 654, "url": "http://bar.com"}]}, response);
     });
   });
 });

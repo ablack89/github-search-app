@@ -5,8 +5,7 @@ var githubUrlBuilder = require('./githubUrlBuilder.js');
 
 const headers = {
   'Accept': 'application/vnd.github.v3+json',
-  'User-Agent': 'GitHub Search App'//,
-  // 'Authorization': 'token 0bd291692636a1dac9e8413003f1a9ba4547739a'
+  'User-Agent': 'GitHub Search App'
 };
 
 const search = function search(query, clientResponse) {
@@ -31,7 +30,7 @@ function constructRequestOptions(url) {
 
 function mapResponse(responseBody) {
   const response = {};
-  response.repositories = responseBody.items.map(item => { return {'name': item.name, 'stars': item.stargazers_count, 'forks': item.forks_count}});
+  response.repositories = responseBody.items.map(item => { return {name: item.name, stars: item.stargazers_count, forks: item.forks_count, url: item.html_url}});
   return response;
 }
 
